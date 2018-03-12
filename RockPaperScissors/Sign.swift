@@ -35,7 +35,6 @@ func randomSign() -> Sign {
 }
 
 func aiSign(_ lastComputerChoice: Sign) -> Sign {
-    print("AI")
     switch lastComputerChoice {
     case .paper:
         return .rock
