@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scissorsButton: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var aiSwitch: UISwitch!
+    @IBOutlet weak var aiLabel: UILabel!
     
     var currentGameState: GameState = GameState.start
     var isFirstTime:Bool = true
@@ -45,10 +46,12 @@ class ViewController: UIViewController {
         scissorsButton.isEnabled = true
         playAgainButton.isHidden = true
         aiSwitch.isHidden = false
+        aiLabel.isHidden = false
     }
     
     func play(_ playerChoice: Sign) {
         aiSwitch.isHidden = true
+        aiLabel.isHidden = true
         var opponant: Sign
         if aiSwitch.isOn {
             if isFirstTime {

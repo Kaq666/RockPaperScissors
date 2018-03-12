@@ -99,6 +99,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="aiLabel" destination="MGL-NF-R2x" id="AWC-HD-iPK"/>
                         <outlet property="aiSwitch" destination="fAJ-FO-3aG" id="5xN-7E-MtM"/>
                         <outlet property="computerLabel" destination="2gg-nU-f8R" id="5ir-fl-Y7s"/>
                         <outlet property="paperButton" destination="Y4W-20-bkk" id="ETK-TQ-Nfv"/>
