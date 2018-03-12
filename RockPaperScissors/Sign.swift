@@ -9,8 +9,18 @@
 import Foundation
 import GameplayKit
 
-
 let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: 2)
+let randomOrAi = GKRandomDistribution(lowestValue: 0, highestValue: 2)
+
+func randomAiSign(_ lastPlayerSign: Sign) -> Sign {
+    let choice = randomOrAi.nextInt()
+    
+    if choice == 0 {
+        return aiSign(lastPlayerSign)
+    } else {
+        return randomSign()
+    }
+}
 
 func randomSign() -> Sign {
     let sign = randomChoice.nextInt()
@@ -21,6 +31,18 @@ func randomSign() -> Sign {
         return .paper
     } else {
         return .scissors
+    }
+}
+
+func aiSign(_ lastComputerChoice: Sign) -> Sign {
+    print("AI")
+    switch lastComputerChoice {
+    case .paper:
+        return .rock
+    case .rock:
+        return .scissors
+    case .scissors:
+        return .paper
     }
 }
 
@@ -38,7 +60,7 @@ enum Sign {
         }
     }
     
-    func compare(opponant: Sign) -> GameState {
+    func compare(_ opponant: Sign) -> GameState {
         switch self {
         case .paper:
             switch opponant {

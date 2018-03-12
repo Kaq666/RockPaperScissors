@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var playAgainButton: UIButton!
     
     var currentGameState: GameState = GameState.start
+    var isFirstTime:Bool = true
+    var lastComputerChoice: Sign?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +46,18 @@ class ViewController: UIViewController {
     }
     
     func play(_ playerChoice: Sign) {
-        let opponant = randomSign()
+        var opponant: Sign
+        if isFirstTime {
+            opponant = randomSign()
+        } else {
+            opponant = randomAiSign(lastComputerChoice!)
+        }
+        
+        lastComputerChoice = opponant
+        
         computerLabel.text = opponant.emoji
         
-        currentGameState = playerChoice.compare(opponant: opponant)
+        currentGameState = playerChoice.compare(opponant)
         
         switch currentGameState {
         case .draw:
@@ -63,22 +73,26 @@ class ViewController: UIViewController {
         }
         
         playAgainButton.isHidden = false
+        isFirstTime = false
     }
 
     @IBAction func rockSelected(_ sender: Any) {
         play(Sign.rock)
+        rockButton.isEnabled = false
         paperButton.isHidden = true
         scissorsButton.isHidden = true
     }
     
     @IBAction func paperSelected(_ sender: Any) {
         play(Sign.paper)
+        paperButton.isEnabled = false
         rockButton.isHidden = true
         scissorsButton.isHidden = true
     }
     
     @IBAction func scissorsSelected(_ sender: Any) {
         play(Sign.scissors)
+        scissorsButton.isEnabled = false
         rockButton.isHidden = true
         paperButton.isHidden = true
     }
