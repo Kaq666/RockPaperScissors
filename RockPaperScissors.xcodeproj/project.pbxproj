@@ -12,6 +12,8 @@
 		6604A53E2056F7C900B77B2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6604A53C2056F7C900B77B2D /* Main.storyboard */; };
 		6604A5402056F7C900B77B2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6604A53F2056F7C900B77B2D /* Assets.xcassets */; };
 		6604A5432056F7C900B77B2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6604A5412056F7C900B77B2D /* LaunchScreen.storyboard */; };
+		6604A54B2056F7E100B77B2D /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6604A54A2056F7E100B77B2D /* Sign.swift */; };
+		6604A54D2056F8B900B77B2D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6604A54C2056F8B900B77B2D /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		6604A53F2056F7C900B77B2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6604A5422056F7C900B77B2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6604A5442056F7C900B77B2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6604A54A2056F7E100B77B2D /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		6604A54C2056F8B900B77B2D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				6604A53F2056F7C900B77B2D /* Assets.xcassets */,
 				6604A5412056F7C900B77B2D /* LaunchScreen.storyboard */,
 				6604A5442056F7C900B77B2D /* Info.plist */,
+				6604A54A2056F7E100B77B2D /* Sign.swift */,
+				6604A54C2056F8B900B77B2D /* GameState.swift */,
 			);
 			path = RockPaperScissors;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6604A53B2056F7C900B77B2D /* ViewController.swift in Sources */,
+				6604A54D2056F8B900B77B2D /* GameState.swift in Sources */,
 				6604A5392056F7C900B77B2D /* AppDelegate.swift in Sources */,
+				6604A54B2056F7E100B77B2D /* Sign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
