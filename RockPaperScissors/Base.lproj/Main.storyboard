@@ -90,6 +90,52 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-eb-6Di">
+                                <rect key="frame" x="10" y="25" width="178" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9U4-eS-xu5">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="20.5"/>
+                                        <subviews>
+                                            <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UC1-p2-IdY">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="20.5"/>
+                                                <subviews>
+                                                    <label verifyAmbiguity="off" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Meilleur score : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsm-Pc-0KX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label verifyAmbiguity="off" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwp-6i-4Sr">
+                                                <rect key="frame" x="136" y="0.0" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIF-7z-22d">
+                                        <rect key="frame" x="0.0" y="20.5" width="178" height="20.5"/>
+                                        <subviews>
+                                            <label verifyAmbiguity="off" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Victoire à suivre : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y82-N7-1Ye">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label verifyAmbiguity="off" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIJ-C9-U1e">
+                                                <rect key="frame" x="136" y="0.0" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="IRY-kH-F5T"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -101,12 +147,14 @@
                     <connections>
                         <outlet property="aiLabel" destination="MGL-NF-R2x" id="AWC-HD-iPK"/>
                         <outlet property="aiSwitch" destination="fAJ-FO-3aG" id="5xN-7E-MtM"/>
+                        <outlet property="bestScoreLabel" destination="fwp-6i-4Sr" id="jI0-EJ-cNL"/>
                         <outlet property="computerLabel" destination="2gg-nU-f8R" id="5ir-fl-Y7s"/>
                         <outlet property="paperButton" destination="Y4W-20-bkk" id="ETK-TQ-Nfv"/>
                         <outlet property="playAgainButton" destination="r9S-Zr-lhx" id="y85-9H-b0s"/>
                         <outlet property="rockButton" destination="C74-JJ-lut" id="xm2-Lx-3Z5"/>
                         <outlet property="scissorsButton" destination="who-eU-s8U" id="Vqn-Wy-ZVn"/>
                         <outlet property="statusLabel" destination="kdy-hh-mYL" id="xBf-xY-x3Q"/>
+                        <outlet property="winInARowLabel" destination="SIJ-C9-U1e" id="r3x-Yh-6Aa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -17,10 +17,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var aiSwitch: UISwitch!
     @IBOutlet weak var aiLabel: UILabel!
+    @IBOutlet weak var bestScoreLabel: UILabel!
+    @IBOutlet weak var winInARowLabel: UILabel!
+    
+    let defaults = UserDefaults.standard
     
     var currentGameState: GameState = GameState.start
     var isFirstTime:Bool = true
     var lastComputerChoice: Sign?
+    var winInARow: Int = 0
+    var bestScore: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +40,9 @@ class ViewController: UIViewController {
     }
     
     func reset() {
+        bestScore = defaults.integer(forKey: "Bestscore")
+        bestScoreLabel.text = String(bestScore)
+        winInARowLabel.text = String(winInARow)
         currentGameState = GameState.start
         self.view.backgroundColor = UIColor.init(red: 0.69, green: 0.88, blue: 0.90, alpha: 1)
         computerLabel.text = "🤖"
@@ -73,17 +82,28 @@ class ViewController: UIViewController {
         case .draw:
             statusLabel.text = "C'est une égalité."
             self.view.backgroundColor = UIColor.init(red: 1.0, green: 0.65, blue: 0, alpha: 1)
+            winInARow = 0
+            winInARowLabel.text = String(winInARow)
         case .lose:
             statusLabel.text = "Désolé, vous avez perdu."
             self.view.backgroundColor = UIColor.init(red: 1.0, green: 0.39, blue: 0.28, alpha: 1)
+            winInARow = 0
+            winInARowLabel.text = String(winInARow)
         case .win:
             statusLabel.text = "Vous avez gagné!"
             self.view.backgroundColor = UIColor.init(red: 0.57, green: 0.93, blue: 0.56, alpha: 1)
+            winInARow += 1
+            winInARowLabel.text = String(winInARow)
         default: break
         }
         
         playAgainButton.isHidden = false
         isFirstTime = false
+        
+        if (winInARow > bestScore) {
+            defaults.set(winInARow, forKey: "Bestscore")
+            bestScoreLabel.text = String(winInARow)
+        }
     }
 
     @IBAction func rockSelected(_ sender: Any) {
